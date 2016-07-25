@@ -25,4 +25,5 @@ alloc.col
 ```
 
 | Example | speed | usability |
+| ---- | --- | --- |
 | fread |  |  |
