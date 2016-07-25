@@ -20,6 +20,9 @@ fwrite
 %between%
 
 setthreads()
+truelength
+alloc.col
 ```
 
-Example - speed - usability
+| Example | speed | usability |
+| fread |  |  |
