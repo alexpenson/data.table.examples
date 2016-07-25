@@ -24,6 +24,9 @@ truelength
 alloc.col
 ```
 
-| Example | speed | usability |
+| function | speed | usability |
 | ---- | --- | --- |
-| fread |  |  |
+| fread / fwrite |  |  |
+| duplicated |  |  |
+| dcast |  |  |
+| melt |  |  |
