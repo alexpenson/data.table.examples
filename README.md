@@ -21,3 +21,5 @@ fwrite
 
 setthreads()
 ```
+
+Example - speed - usability
