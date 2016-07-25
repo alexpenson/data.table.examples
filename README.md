@@ -30,3 +30,5 @@ alloc.col
 | duplicated |  |  |
 | dcast |  |  |
 | melt |  |  |
+| inrange |  |  |
+| foverlaps |  |  |
