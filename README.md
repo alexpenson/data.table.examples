@@ -27,8 +27,6 @@ alloc.col
 | function | speed | usability |
 | ---- | --- | --- |
 | fread / fwrite |  |  |
-| duplicated |  |  |
-| dcast |  |  |
-| melt |  |  |
-| inrange |  |  |
-| foverlaps |  |  |
+| dcast / melt |  |  |
+| inrange / foverlaps |  |  |
+| duplicated, frank etc. |  |  |
