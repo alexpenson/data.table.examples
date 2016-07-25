@@ -18,8 +18,13 @@ DT[, as.list(summary(V3)), V1]
 fwrite
 
 %between%
+```
 
-setthreads()
+```
+microbenchmark::microbenchmark({setthreads(32); CJ(1:1000,1:10000)}, {setthreads(1); CJ(1:1000,1:10000)}, times = 500)
+```
+
+```
 truelength
 alloc.col
 ```
