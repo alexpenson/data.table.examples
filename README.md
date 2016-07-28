@@ -1,5 +1,10 @@
 # data.table.examples
 
+https://github.com/Rdatatable/data.table/wiki
+```
+install.packages("data.table", type = "source",
+    repos = "http://Rdatatable.github.io/data.table")
+```
 
 https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
 
