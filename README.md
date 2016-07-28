@@ -38,5 +38,8 @@ alloc.col
 | ---- | --- | --- |
 | fread / fwrite |  |  |
 | dcast / melt |  |  |
+| rbind | | |
 | inrange / foverlaps |  |  |
 | duplicated, frank etc. |  |  |
+
+https://github.com/hadley/dtplyr
