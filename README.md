@@ -13,7 +13,7 @@ http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 ## dt[i, j, by]
 
 ### Internal Optimization - Auto-indexing and GForce
-
+`?datatable.optimize`
 ```
 set.seed(1L)
 dt = lapply(1:20, function(x) sample(c(-100:100), 5e6L, TRUE))
