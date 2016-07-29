@@ -10,7 +10,9 @@ https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
 
 http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 
-## Internal Optimization - Auto-indexing and GForce
+## dt[i, j, by]
+
+### Internal Optimization - Auto-indexing and GForce
 
 ```
 set.seed(1L)
@@ -63,7 +65,7 @@ truelength
 alloc.col
 ```
 
-## foverlaps
+# inrange / foverlaps
 
 `?foverlaps`
 
