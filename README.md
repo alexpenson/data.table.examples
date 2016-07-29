@@ -18,18 +18,11 @@ V3=round(rnorm(4),4),
 V4=1:12)
 
 DT[, as.list(summary(V3)), V1]
-
-
-fwrite
-
-%between%
 ```
 
 ```
 microbenchmark::microbenchmark({setthreads(32); CJ(1:1000,1:10000)}, {setthreads(1); CJ(1:1000,1:10000)}, times = 500)
-```
 
-```
 truelength
 alloc.col
 ```
