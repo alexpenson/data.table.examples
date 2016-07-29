@@ -23,6 +23,23 @@ options(datatable.optimize = 1L) # optimisation 'on'
 system.time(ans1 <- dt[, lapply(.SD, mean), by=id])
 system.time(ans2 <- dt[, lapply(.SD, base::mean), by=id])
 identical(ans1, ans2)
+
+# auto indexing
+system.time(ans1 <- dt[id == 100L]) # vector scan
+#   user  system elapsed 
+#  0.027   0.003   0.032 
+system.time(ans2 <- dt[id == 100L]) # vector scan
+#   user  system elapsed 
+#  0.026   0.003   0.031 
+ 
+options(datatable.auto.index = TRUE)
+system.time(ans1 <- dt[id == 100L]) # index + binary search subset
+#   user  system elapsed 
+#  0.116   0.004   0.131 
+system.time(ans2 <- dt[id == 100L]) # only binary search subset
+#   user  system elapsed 
+#  0.003   0.000   0.003 
+
 ```
 
 ```
