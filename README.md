@@ -48,6 +48,8 @@ system.time(ans2 <- dt[id == 100L]) # only binary search subset
 
 ```
 
+`Unable to optimize call to mean() and could be very slow.`
+
 ```
 set.seed(45L)
 DT <- data.table(V1=c(1L,2L),
