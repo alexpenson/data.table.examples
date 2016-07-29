@@ -46,6 +46,7 @@ Very briefly, foverlaps() collapses the two-column interval in y to one-column o
 | function | speed | usability |
 | ---- | --- | --- |
 | fread / fwrite |  |  |
+| dt[i, j, by] |  |  |
 | dcast / melt |  |  |
 | rbind | | |
 | inrange / foverlaps |  |  |
