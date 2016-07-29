@@ -47,9 +47,9 @@ Very briefly, foverlaps() collapses the two-column interval in y to one-column o
 | ---- | --- | --- |
 | fread / fwrite |  |  |
 | dt[i, j, by] |  |  |
-| dcast / melt |  |  |
-| rbind | | |
+| merge / rbind | | |
 | inrange / foverlaps |  |  |
+| dcast / melt |  |  |
 | duplicated, frank etc. |  |  |
 
 https://github.com/hadley/dtplyr
