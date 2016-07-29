@@ -21,7 +21,11 @@ print(object.size(dt), units="Mb") # 400MB, not huge, but will do
 # optimisation of 'mean'
 options(datatable.optimize = 1L) # optimisation 'on'
 system.time(ans1 <- dt[, lapply(.SD, mean), by=id])
+#   user  system elapsed 
+#  4.934   0.041   5.338 
 system.time(ans2 <- dt[, lapply(.SD, base::mean), by=id])
+#   user  system elapsed 
+# 38.041   0.253  41.950 
 identical(ans1, ans2)
 
 # auto indexing
