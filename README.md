@@ -12,6 +12,7 @@ http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 
 ## fread
 
+Reading a large maf file
 ```
 > fillout <- fread("Proj_05927_C___FILLOUT.maf", verbose = T)
 Input contains no \n. Taking this to be a filename to open
