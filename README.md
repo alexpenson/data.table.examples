@@ -14,40 +14,88 @@ http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 
 Reading a large maf file
 ```
-> fillout <- fread("Proj_05927_C___FILLOUT.maf", verbose = T)
 Input contains no \n. Taking this to be a filename to open
-File opened, filesize is 1.605653 GB.
+File opened, filesize is 0.011734 GB.
 Memory mapping ... ok
 Detected eol as \n only (no \r afterwards), the UNIX and Mac standard.
 Positioned on line 1 after skip or autostart
 This line is the autostart and not blank so searching up for the last non-blank ... line 1
 Detecting sep ... '\t'
-Detected 109 columns. Longest stretch was from line 2 to line 30
+Detected 87 columns. Longest stretch was from line 2 to line 30
 Starting data input on line 2 (either column names or first row of data). First 10 characters: Hugo_Symbo
 All the fields on line 2 are character fields. Treating as the column names.
-Count of eol: 1981300 (including 1 at the end)
-Count of sep: 213980292
-nrow = MIN( nsep [213980292] / (ncol [109] -1), neol [1981300] - endblanks [1] ) = 1981299
-Type codes ( first 5 rows): 4144111444444404444000000000000000444441110004444444444441014414444444444444444044444040000041400413333333304
-Type codes (middle 5 rows): 4144411444444404444000000000000000444441110004444444444441014414444444444444444044444040000041400413333333304
-Type codes (  last 5 rows): 4144411444444404444000000000000000444441110004444444444441014414444444444444444044444040000041400413333333304
-Type codes: 4144411444444404444000000000000000444441110004444444444441014414444444444444444044444040000041400413333333304 (after applying colClasses and integer64)
-Type codes: 4144411444444404444000000000000000444441110004444444444441014414444444444444444044444040000041400413333333304 (after applying drop or select (if supplied)
-Allocating 109 column slots (109 - 0 dropped)
-Read 0.0% of 1981299 rows
-Bumping column 108 from LGL to INT on data row 6, field contains '1'
-Read 1981299 rows and 109 (of 109) columns from 1.606 GB file in 00:00:36
-Read 1981299 rows. Exactly what was estimated and allocated up front
-   0.000s (  0%) Memory map (rerun may be quicker)
+Count of eol: 12349 (including 1 at the end)
+Count of sep: 1061928
+nrow = MIN( nsep [1061928] / (ncol [87] -1), neol [12349] - endblanks [1] ) = 12348
+Type codes ( first 5 rows): 414111144444400440000000444440044444411444444444140004440041440404300000000004411444411
+Type codes (middle 5 rows): 414111144444400440000000444440044444411444444444140004440041440404300000000004411444411
+Type codes (  last 5 rows): 414111144444400440000000444440044444411444444444140004440041444404300000000004411444411
+Type codes: 414111144444400440000000444440044444411444444444140004440041444404300000000004411444411 (after applying colClasses and integer64)
+Type codes: 414111144444400440000000444440044444411444444444140004440041444404300000000004411444411 (after applying drop or select (if supplied)
+Allocating 87 column slots (87 - 0 dropped)
+Bumping column 14 from LGL to INT on data row 6, field contains 'rs143790685'
+Bumping column 14 from INT to INT64 on data row 6, field contains 'rs143790685'
+Bumping column 14 from INT64 to REAL on data row 6, field contains 'rs143790685'
+Bumping column 14 from REAL to STR on data row 6, field contains 'rs143790685'
+Bumping column 57 from LGL to INT on data row 7, field contains 'p.R588P(1)|p.R588Q(1)'
+Bumping column 57 from INT to INT64 on data row 7, field contains 'p.R588P(1)|p.R588Q(1)'
+Bumping column 57 from INT64 to REAL on data row 7, field contains 'p.R588P(1)|p.R588Q(1)'
+Bumping column 57 from REAL to STR on data row 7, field contains 'p.R588P(1)|p.R588Q(1)'
+Bumping column 71 from LGL to INT on data row 8, field contains 'NFIB'
+Bumping column 71 from INT to INT64 on data row 8, field contains 'NFIB'
+Bumping column 71 from INT64 to REAL on data row 8, field contains 'NFIB'
+Bumping column 71 from REAL to STR on data row 8, field contains 'NFIB'
+Bumping column 72 from LGL to INT on data row 8, field contains 'adenoid cystic carcinoma'
+Bumping column 72 from INT to INT64 on data row 8, field contains 'adenoid cystic carcinoma'
+Bumping column 72 from INT64 to REAL on data row 8, field contains 'adenoid cystic carcinoma'
+Bumping column 72 from REAL to STR on data row 8, field contains 'adenoid cystic carcinoma'
+Bumping column 5 from INT to INT64 on data row 19, field contains 'X'
+Bumping column 5 from INT64 to REAL on data row 19, field contains 'X'
+Bumping column 5 from REAL to STR on data row 19, field contains 'X'
+Bumping column 65 from LGL to INT on data row 21, field contains 'N-Acetyl-D-glucosamine(DB00141)'
+Bumping column 65 from INT to INT64 on data row 21, field contains 'N-Acetyl-D-glucosamine(DB00141)'
+Bumping column 65 from INT64 to REAL on data row 21, field contains 'N-Acetyl-D-glucosamine(DB00141)'
+Bumping column 65 from REAL to STR on data row 21, field contains 'N-Acetyl-D-glucosamine(DB00141)'
+Bumping column 77 from LGL to INT on data row 41, field contains 'HNSCC(13;0.011)'
+Bumping column 77 from INT to INT64 on data row 41, field contains 'HNSCC(13;0.011)'
+Bumping column 77 from INT64 to REAL on data row 41, field contains 'HNSCC(13;0.011)'
+Bumping column 77 from REAL to STR on data row 41, field contains 'HNSCC(13;0.011)'
+Bumping column 52 from LGL to INT on data row 47, field contains 'I -> V (in dbSNP:rs13361416).'
+Bumping column 52 from INT to INT64 on data row 47, field contains 'I -> V (in dbSNP:rs13361416).'
+Bumping column 52 from INT64 to REAL on data row 47, field contains 'I -> V (in dbSNP:rs13361416).'
+Bumping column 52 from REAL to STR on data row 47, field contains 'I -> V (in dbSNP:rs13361416).'
+Bumping column 75 from LGL to INT on data row 52, field contains 'Direct reversal of damage;Homologous recombination'
+Bumping column 75 from INT to INT64 on data row 52, field contains 'Direct reversal of damage;Homologous recombination'
+Bumping column 75 from INT64 to REAL on data row 52, field contains 'Direct reversal of damage;Homologous recombination'
+Bumping column 75 from REAL to STR on data row 52, field contains 'Direct reversal of damage;Homologous recombination'
+Bumping column 76 from LGL to INT on data row 53, field contains 'Oculocutaneous Albinism'
+Bumping column 76 from INT to INT64 on data row 53, field contains 'Oculocutaneous Albinism'
+Bumping column 76 from INT64 to REAL on data row 53, field contains 'Oculocutaneous Albinism'
+Bumping column 76 from REAL to STR on data row 53, field contains 'Oculocutaneous Albinism'
+Bumping column 69 from LGL to INT on data row 66, field contains '111'
+Bumping column 70 from LGL to INT on data row 66, field contains '"""Mis, N, F"""'
+Bumping column 70 from INT to INT64 on data row 66, field contains '"""Mis, N, F"""'
+Bumping column 70 from INT64 to REAL on data row 66, field contains '"""Mis, N, F"""'
+Bumping column 70 from REAL to STR on data row 66, field contains '"""Mis, N, F"""'
+Bumping column 73 from LGL to INT on data row 66, field contains '"""breast, sarcoma, adrenocortical carcinoma, glioma, multiple other tumour types"""'
+Bumping column 73 from INT to INT64 on data row 66, field contains '"""breast, sarcoma, adrenocortical carcinoma, glioma, multiple other tumour types"""'
+Bumping column 73 from INT64 to REAL on data row 66, field contains '"""breast, sarcoma, adrenocortical carcinoma, glioma, multiple other tumour types"""'
+Bumping column 73 from REAL to STR on data row 66, field contains '"""breast, sarcoma, adrenocortical carcinoma, glioma, multiple other tumour types"""'
+Bumping column 15 from LGL to INT on data row 104, field contains 'by1000genomes'
+```
+...
+```
+Read 12348 rows. Exactly what was estimated and allocated up front
+   0.001s (  1%) Memory map (rerun may be quicker)
    0.001s (  0%) sep and header detection
-   9.654s ( 27%) Count rows (wc -l)
-   0.004s (  0%) Column type detection (first, middle and last 5 rows)
-   1.800s (  5%) Allocation of 1981299x109 result (xMB) in RAM
-  24.113s ( 67%) Reading data
-   0.215s (  1%) Allocation for type bumps (if any), including gc time if triggered
-   0.003s (  0%) Coercing data already read in type bumps (if any)
-   0.185s (  1%) Changing na.strings to NA
-  35.976s        Total
+   0.035s ( 14%) Count rows (wc -l)
+   0.007s (  3%) Column type detection (first, middle and last 5 rows)
+   0.001s (  0%) Allocation of 12348x87 result (xMB) in RAM
+   0.190s ( 75%) Reading data
+   0.001s (  0%) Allocation for type bumps (if any), including gc time if triggered
+   0.016s (  6%) Coercing data already read in type bumps (if any)
+   0.001s (  0%) Changing na.strings to NA
+   0.253s        Total
 ```
 
 
