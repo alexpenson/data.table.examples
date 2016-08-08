@@ -52,7 +52,9 @@ Read 12348 rows. Exactly what was estimated and allocated up front
    0.001s (  0%) Changing na.strings to NA
    0.253s        Total
 ```
+Also:
 
+`check.names` default is FALSE
 
 ## dt[i, j, by]
 
