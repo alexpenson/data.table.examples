@@ -14,6 +14,10 @@ http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 
 Reading a large maf file
 ```
+maf <- fread("https://tcga-data.nci.nih.gov/docs/publications/prad_2015/PRAD_Capture_All_Pairs_QCPASS_v6_Nikki_Nov_25.aggregated.capture.tcga.uuid.curated.somatic.maf", verbose = T)
+```
+
+```
 Input contains no \n. Taking this to be a filename to open
 File opened, filesize is 0.011734 GB.
 Memory mapping ... ok
