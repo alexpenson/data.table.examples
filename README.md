@@ -75,6 +75,7 @@ system.time(ans2 <- dt[, lapply(.SD, base::mean), by=id])
 identical(ans1, ans2)
 
 # auto indexing
+options(datatable.auto.index = FALSE)
 system.time(ans1 <- dt[id == 100L]) # vector scan
 #   user  system elapsed 
 #  0.027   0.003   0.032 
