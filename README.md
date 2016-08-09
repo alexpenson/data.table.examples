@@ -97,6 +97,17 @@ system.time(ans2 <- dt[id == 100L]) # only binary search subset
 
 `Unable to optimize call to mean() and could be very slow.`
 
+## merge
+
+JOIN type	DT syntax	data.table::merge() syntax
+INNER	X[Y, nomatch=0]	merge(X, Y, all=FALSE)
+LEFT OUTER	Y[X]	merge(X, Y, all.x=TRUE)
+RIGHT OUTER	X[Y]	merge(X, Y, all.y=TRUE)
+FULL OUTER	-	merge(X, Y, all=TRUE)
+FULL OUTER WHERE NULL (NOT INNER)	-	merge(X, Y, all=TRUE), subset NA
+
+
+
 ```
 set.seed(45L)
 DT <- data.table(V1=c(1L,2L),
@@ -122,6 +133,13 @@ Usually, x is a very large data.table with small interval ranges, and y is much 
 
 Very briefly, foverlaps() collapses the two-column interval in y to one-column of unique values to generate a lookup table, and then performs the join depending on the type of overlap, using the already available binary search feature of data.table.
 
+| JOIN type | DT syntax | data.table::merge() syntax |
+| --- | --- | --- |
+| INNER | X[Y, nomatch=0] | merge(X, Y, all=FALSE) |
+| LEFT OUTER | Y[X] | merge(X, Y, all.x=TRUE) |
+| RIGHT OUTER | X[Y] | merge(X, Y, all.y=TRUE) |
+| FULL OUTER | - | merge(X, Y, all=TRUE) |
+| FULL OUTER WHERE NULL (NOT INNER) | - | merge(X, Y, all=TRUE), subset NA |
 
 | function | fast | concise |
 | ---- | --- | --- |
