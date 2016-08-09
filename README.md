@@ -56,7 +56,19 @@ Also:
 
 `check.names` default is FALSE
 
-## dt[i, j, by]
+## `dt[i, j, by]`
+
+`j` must return a list
+
+```
+set.seed(45L)
+DT <- data.table(V1=c(1L,2L),
+V2=LETTERS[1:3],
+V3=round(rnorm(4),4),
+V4=1:12)
+
+DT[, as.list(summary(V3)), V1]
+```
 
 ### Internal Optimization - Auto-indexing and GForce
 `?datatable.optimize`
@@ -109,16 +121,6 @@ system.time(ans2 <- dt[id == 100L]) # only binary search subset
 https://rstudio-pubs-static.s3.amazonaws.com/52230_5ae0d25125b544caab32f75f0360e775.html
 
 
-
-```
-set.seed(45L)
-DT <- data.table(V1=c(1L,2L),
-V2=LETTERS[1:3],
-V3=round(rnorm(4),4),
-V4=1:12)
-
-DT[, as.list(summary(V3)), V1]
-```
 
 ```
 microbenchmark::microbenchmark({setthreads(32); CJ(1:1000,1:10000)}, {setthreads(1); CJ(1:1000,1:10000)}, times = 500)
