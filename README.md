@@ -60,9 +60,11 @@ Read 12348 rows. Exactly what was estimated and allocated up front
    0.001s (  0%) Changing na.strings to NA
    0.253s        Total
 ```
-Also:
+### keys
 
-`check.names` default is FALSE
+```
+maf <- fread("example.maf", key = "Tumor_Sample_Barcode")
+```
 
 ## `dt[i, j, by]`
 
