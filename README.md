@@ -129,7 +129,7 @@ truelength
 alloc.col
 ```
 
-# inrange / foverlaps
+## inrange / foverlaps
 
 `?foverlaps`
 
