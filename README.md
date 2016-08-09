@@ -123,7 +123,7 @@ Usually, x is a very large data.table with small interval ranges, and y is much 
 Very briefly, foverlaps() collapses the two-column interval in y to one-column of unique values to generate a lookup table, and then performs the join depending on the type of overlap, using the already available binary search feature of data.table.
 
 
-| function | speed | usability |
+| function | fast | concise |
 | ---- | --- | --- |
 | fread / fwrite |  |  |
 | dt[i, j, by] |  |  |
