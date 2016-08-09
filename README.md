@@ -115,13 +115,13 @@ system.time(ans2 <- dt[id == 100L]) # only binary search subset
 
 ## merge
 
-| JOIN type | DT syntax | data.table::merge() syntax |
-| --- | --- | --- |
-| INNER | X[Y, nomatch=0] | merge(X, Y, all=FALSE) |
-| LEFT OUTER | Y[X] | merge(X, Y, all.x=TRUE) |
-| RIGHT OUTER | X[Y] | merge(X, Y, all.y=TRUE) |
-| FULL OUTER | - | merge(X, Y, all=TRUE) |
-| FULL OUTER WHERE NULL (NOT INNER) | - | merge(X, Y, all=TRUE), subset NA |
+JOIN type | DT syntax | data.table::merge() syntax
+------ | ----- | -----
+INNER | X[Y, nomatch=0] | merge(X, Y, all=FALSE)
+LEFT OUTER | Y[X] | merge(X, Y, all.x=TRUE)
+RIGHT OUTER | X[Y] | merge(X, Y, all.y=TRUE)
+FULL OUTER | - | merge(X, Y, all=TRUE)
+FULL OUTER WHERE NULL (NOT INNER) | - | merge(X, Y, all=TRUE), subset NA
 https://rstudio-pubs-static.s3.amazonaws.com/52230_5ae0d25125b544caab32f75f0360e775.html
 
 
