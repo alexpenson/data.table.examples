@@ -71,13 +71,7 @@ maf <- fread("example.maf", key = "Tumor_Sample_Barcode")
 `j` must return a list
 
 ```
-set.seed(45L)
-DT <- data.table(V1=c(1L,2L),
-V2=LETTERS[1:3],
-V3=round(rnorm(4),4),
-V4=1:12)
-
-DT[, as.list(summary(V3)), V1]
+maf[, as.list(summary(t_depth)), Tumor_Sample_Barcode]
 ```
 
 ### Internal Optimization - Auto-indexing and GForce
