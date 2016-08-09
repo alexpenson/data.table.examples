@@ -1,5 +1,13 @@
 # data.table.examples
 
+| function | concise | fast |
+| ---- | --- | --- |
+| fread / fwrite |  |  |
+| dt[i, j, by] |  |  |
+| merge / rbind | | |
+| inrange / foverlaps |  |  |
+| dcast / melt |  |  |
+
 https://github.com/Rdatatable/data.table/wiki
 ```
 install.packages("data.table", type = "source",
@@ -136,14 +144,5 @@ alloc.col
 Usually, x is a very large data.table with small interval ranges, and y is much smaller keyed data.table with relatively larger interval spans
 
 Very briefly, foverlaps() collapses the two-column interval in y to one-column of unique values to generate a lookup table, and then performs the join depending on the type of overlap, using the already available binary search feature of data.table.
-
-| function | concise | fast |
-| ---- | --- | --- |
-| fread / fwrite |  |  |
-| dt[i, j, by] |  |  |
-| merge / rbind | | |
-| inrange / foverlaps |  |  |
-| dcast / melt |  |  |
-| duplicated, frank etc. |  |  |
 
 https://github.com/hadley/dtplyr
