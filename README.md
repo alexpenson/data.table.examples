@@ -45,8 +45,8 @@ dtplyr will always be a bit slower than data.table, because it creates copies of
 / dtplyr will always be a bit slower than \
 \ data.table                              /
  -----------------------------------------
-        \   
-         \  
+     /   
+    /  
 ```
 <img src="https://avatars1.githubusercontent.com/u/4196?v=3&s=460" width="55">
 
