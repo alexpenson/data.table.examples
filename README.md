@@ -25,7 +25,7 @@ https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
 
 http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 
-## fread - Fast and friendly
+## fread - fast and friendly
 Benchmarks on 50 MB file (from `?fread`)
 
 ```
@@ -64,7 +64,7 @@ system.time(DT <- fread("test.csv"))
 #  3 sec (faster and friendlier)
 ```
 
-Reading a maf file
+### Reading a maf file
 ```
 maf <- fread("https://tcga-data.nci.nih.gov/docs/publications/prad_2015/PRAD_Capture_All_Pairs_QCPASS_v6_Nikki_Nov_25.aggregated.capture.tcga.uuid.curated.somatic.maf", verbose = T)
 ```
