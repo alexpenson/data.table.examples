@@ -66,11 +66,11 @@ Read 12348 rows. Exactly what was estimated and allocated up front
 maf <- fread("example.maf", key = "Tumor_Sample_Barcode")
 ```
 
-## `DT[where, select|update|do, by]`
+## `DT[ i,  j,  by ]`
 
-
+Take DT, subset rows by `i`, then compute `j` grouped by `by`
 ```
-    DT[ i,  j,  by ] # + extra arguments
+    DT[ i,  j,  by ]
         |   |   |
         |   |    -------> grouped by what?
         |    -------> what to do?
