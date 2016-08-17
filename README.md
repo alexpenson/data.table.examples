@@ -43,7 +43,8 @@ dtplyr will always be a bit slower than data.table, because it creates copies of
 ```
  _________________________________________
 / dtplyr will always be a bit slower than \
-\ data.table                              /
+| data.table, because it creates copies   |
+\ of objects                              /
  -----------------------------------------
      /   
     /  
