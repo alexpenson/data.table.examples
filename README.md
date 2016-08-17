@@ -49,7 +49,7 @@ https://www.reddit.com/r/rstats/comments/2ymnal/datatable_why/
 
 https://github.com/hadley/dtplyr
 
-## multi-thread
+## data.table uses multi-thread by default
 
 Must compile with OpenMP for multi-thread:
 
