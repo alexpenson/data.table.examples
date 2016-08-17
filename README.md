@@ -25,10 +25,10 @@ https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
 
 http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 
-## No side effects!
-In the functional programming paradigm, the output is the only thing a function affects, no side effects!
+## No side effects?
+In the functional programming paradigm, a function's output is the only thing it can affect, no side effects!
 
-In many cases this is very helpful, however a function modifying a table, cannot touch the input therefore must create a copy 
+In many cases this is very helpful, however: a function modifying a table cannot touch the input must create a copy 
 
 `data.table` uses pass-by-reference and avoids creating a copy.
 
