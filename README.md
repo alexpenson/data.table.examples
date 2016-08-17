@@ -205,6 +205,8 @@ DT[, {tmp <- mean(y);
                                       # expression. TO REMEMBER: every element of 
                                       # the list becomes a column in result.
 ```
+`?data.table`
+
 ### Benchmarks
 ![Benchmarks image](https://github.com/Rdatatable/data.table/wiki/bench/grouping.1E9.png)
 
