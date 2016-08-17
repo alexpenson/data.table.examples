@@ -128,11 +128,6 @@ Read 12348 rows. Exactly what was estimated and allocated up front
    0.001s (  0%) Changing na.strings to NA
    0.253s        Total
 ```
-### keys
-
-```
-maf <- fread("example.maf", key = "Tumor_Sample_Barcode")
-```
 
 ## `DT[ i,  j,  by ]`
 
@@ -152,6 +147,7 @@ maf[, as.list(summary(t_depth)), Tumor_Sample_Barcode]
 ```
 ### Benchmarks
 ![Benchmarks image](https://github.com/Rdatatable/data.table/wiki/bench/grouping.1E9.png)
+
 ### Internal Optimization - Auto-indexing and GForce
 `?datatable.optimize`
 ```
