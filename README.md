@@ -1,6 +1,6 @@
 # data.table.examples
 
-| Functions | 
+| Functions  | 
 | ---- | 
 | fread / fwrite |  
 | dt[i, j, by] |  
