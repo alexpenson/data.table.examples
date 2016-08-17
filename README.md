@@ -185,7 +185,17 @@ system.time(ans2 <- dt[id == 100L]) # only binary search subset
 
 ```
 
-`Unable to optimize call to mean() and could be very slow.`
+### looping with `set`
+```
+M = matrix(1,nrow=100000,ncol=100)
+# DF = as.data.frame(M)
+DT = as.data.table(M)
+# system.time(for (i in 1:1000) DF[i,1L] <- i)   # 591.000s
+system.time(for (i in 1:1000) DT[i,V1:=i])     #   1.158s
+system.time(for (i in 1:1000) M[i,1L] <- i)    #   0.016s
+system.time(for (i in 1:1000) set(DT,i,1L,i))  #   0.027s
+```
+
 
 ## merge
 
@@ -199,14 +209,6 @@ RIGHT OUTER | X[Y] | merge(X, Y, all.y=TRUE)
 FULL OUTER | - | merge(X, Y, all=TRUE)
 FULL OUTER WHERE NULL (NOT INNER) | - | merge(X, Y, all=TRUE), subset NA
 https://github.com/ronasta/JOINing-Data-with-R-data.table
-
-
-```
-microbenchmark::microbenchmark({setthreads(32); CJ(1:1000,1:10000)}, {setthreads(1); CJ(1:1000,1:10000)}, times = 500)
-
-truelength
-alloc.col
-```
 
 ## inrange / foverlaps
 
