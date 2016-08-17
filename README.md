@@ -25,6 +25,14 @@ https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
 
 http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 
+## dplyr
+
+dtplyr is the data.table backend for dplyr. It provides S3 methods for data.table objects so that dplyr works the way you expect.
+
+dtplyr will always be a bit slower than data.table, because it creates copies of objects rather than mutating in place (that's the dplyr philosophy). Currently, dtplyr is quite a lot slower than bare data.table because the methods aren't quite smart enough.
+https://github.com/hadley/dtplyr
+
+
 ## fread
 Benchmarks on 50 MB file (from `?fread`)
 
@@ -228,4 +236,3 @@ maf_excludable <- foverlaps(maf, wg, nomatch = 0)    ### using TCGA prostate maf
 nrow(maf_excludable)
 # 30
 ```
-https://github.com/hadley/dtplyr
