@@ -177,6 +177,34 @@ Take DT, subset rows by `i`, then compute `j` grouped by `by`
 ```
 maf[, as.list(summary(t_depth)), Tumor_Sample_Barcode]
 ```
+
+```
+# advanced usage
+DT = data.table(x=rep(c("b","a","c"),each=3), v=c(1,1,1,2,2,1,1,2,2), y=c(1,3,6), a=1:9, b=9:1)
+
+DT[, sum(v), by=.(y%%2)]              # expressions in by
+DT[, sum(v), by=.(bool = y%%2)]       # same, using a named list to change by column name
+DT[, .SD[2], by=x]                    # get 2nd row of each group
+DT[, tail(.SD,2), by=x]               # last 2 rows of each group
+DT[, lapply(.SD, sum), by=x]          # sum of all (other) columns for each group
+DT[, .SD[which.min(v)], by=x]         # nested query by group
+
+DT[, list(MySum=sum(v),
+          MyMin=min(v),
+          MyMax=max(v)),
+    by=.(x, y%%2)]                    # by 2 expressions
+
+DT[, .(a = .(a), b = .(b)), by=x]     # list columns
+DT[, .(seq = min(a):max(b)), by=x]    # j is not limited to just aggregations
+DT[, sum(v), by=x][V1<20]             # compound query
+DT[, sum(v), by=x][order(-V1)]        # ordering results
+DT[, c(.N, lapply(.SD,sum)), by=x]    # get number of observations and sum per group
+DT[, {tmp <- mean(y); 
+      .(a = a-tmp, b = b-tmp)
+      }, by=x]                        # anonymous lambdain 'j', j accepts any valid 
+                                      # expression. TO REMEMBER: every element of 
+                                      # the list becomes a column in result.
+```
 ### Benchmarks
 ![Benchmarks image](https://github.com/Rdatatable/data.table/wiki/bench/grouping.1E9.png)
 
