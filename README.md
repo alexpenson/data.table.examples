@@ -45,7 +45,7 @@ https://www.reddit.com/r/rstats/comments/2ymnal/datatable_why/
      /   
     /  
 ```
-<img src="https://avatars1.githubusercontent.com/u/4196?v=3&s=460" width="55">
+<img src="https://avatars1.githubusercontent.com/u/4196?v=3&s=460" width="75">
 
 https://github.com/hadley/dtplyr
 
