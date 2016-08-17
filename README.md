@@ -40,7 +40,14 @@ https://www.reddit.com/r/rstats/comments/2ymnal/datatable_why/
 dtplyr is the data.table backend for dplyr. It provides S3 methods for data.table objects so that dplyr works the way you expect.
 
 dtplyr will always be a bit slower than data.table, because it creates copies of objects rather than mutating in place (that's the dplyr philosophy). Currently, dtplyr is quite a lot slower than bare data.table because the methods aren't quite smart enough.
-
+```
+ _________________________________________
+/ dtplyr will always be a bit slower than \
+\ data.table                              /
+ -----------------------------------------
+        \   
+         \  
+```
 <img src="https://avatars1.githubusercontent.com/u/4196?v=3&s=460" width="55">
 
 https://github.com/hadley/dtplyr
