@@ -75,7 +75,6 @@ write.table(dt, "tmp2.tsv",
                 sep='\t')
 #   user  system elapsed 
 # 72.020   1.363  78.741 
-
 ```
 
 ### Reading a maf file
