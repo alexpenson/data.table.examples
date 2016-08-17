@@ -8,11 +8,18 @@
 | inrange / foverlaps |  
 | dcast / melt |  
 
-https://github.com/Rdatatable/data.table/wiki
+## Install latest version
+
 ```
 install.packages("data.table", type = "source",
     repos = "http://Rdatatable.github.io/data.table")
 ```
+
+## Helpful references
+
+`?data.table`
+
+https://github.com/Rdatatable/data.table/wiki
 
 https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
 
