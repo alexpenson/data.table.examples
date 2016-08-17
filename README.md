@@ -49,7 +49,13 @@ https://www.reddit.com/r/rstats/comments/2ymnal/datatable_why/
 
 https://github.com/hadley/dtplyr
 
+## multi-thread
 
+Must compile with OpenMP for multi-thread:
+
+https://github.com/Rdatatable/data.table/wiki/Installation#openmp-enabled-compiler-for-mac
+
+`setthreads()` and `getthreads()`
 
 ## fread
 Benchmarks on 50 MB file (from `?fread`)
