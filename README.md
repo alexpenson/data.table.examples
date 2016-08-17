@@ -195,7 +195,7 @@ system.time(for (i in 1:1000) DT[i,V1:=i])     #   1.158s
 system.time(for (i in 1:1000) M[i,1L] <- i)    #   0.016s
 system.time(for (i in 1:1000) set(DT,i,1L,i))  #   0.027s
 ```
-
+http://brooksandrew.github.io/simpleblog/articles/advanced-data-table/#fast-looping-with-set
 
 ## merge
 
