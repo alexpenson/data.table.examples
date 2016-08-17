@@ -90,7 +90,7 @@ system.time(fwrite(dt, "~/tmp.tsv", quote=FALSE, sep="\t", verbose = TRUE))
 ```
 maf <- fread("https://tcga-data.nci.nih.gov/docs/publications/prad_2015/PRAD_Capture_All_Pairs_QCPASS_v6_Nikki_Nov_25.aggregated.capture.tcga.uuid.curated.somatic.maf", 
              verbose = T,
-             key = "Tumor_Sample_Barcode")
+             key = c("Chromosome", "Start_position", "End_position"))
 ```
 
 ```
