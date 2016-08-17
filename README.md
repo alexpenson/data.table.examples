@@ -224,7 +224,7 @@ setnames(wg, c("Chromosome", "Start_position", "End_position", "name", "A", "B")
 wg[, Chromosome := gsub("^chr", "", Chromosome)]
 setkeyv(wg, c("Chromosome", "Start_position", "End_position"))
 
-maf_excludable <- foverlaps(maf, wg, nomatch = 0)
+maf_excludable <- foverlaps(maf, wg, nomatch = 0)    ### using TCGA prostate maf from earlier
 nrow(maf_excludable)
 # 30
 ```
