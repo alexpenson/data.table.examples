@@ -124,6 +124,8 @@ system.time(ans2 <- dt[id == 100L]) # only binary search subset
 
 ## merge
 
+merge by keys (or otherwise include, for example, `by.x = "ID"`)
+
 JOIN type | DT syntax | data.table::merge() syntax
 ------ | ----- | -----
 INNER | X[Y, nomatch=0] | merge(X, Y, all=FALSE)
