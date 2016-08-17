@@ -267,8 +267,6 @@ system.time(dcast(DT, bb ~ cc, fun=mean)) # 0.04 seconds
 # reshape2::dcast takes 31 seconds
 system.time(dcast(DT, aa + bb ~ cc, fun=sum)) # 1.2 seconds
 
-## End(Not run)
-
 # NEW FEATURE - multiple value.var and multiple fun.aggregate
 dt = data.table(x=sample(5,20,TRUE), y=sample(2,20,TRUE), 
                 z=sample(letters[1:2], 20,TRUE), d1 = runif(20), d2=1L)
@@ -281,6 +279,8 @@ dcast(dt, x + y ~ z, fun=list(sum, mean), value.var=c("d1", "d2"))
 # multiple fun.agg and value.var (one-to-one)
 dcast(dt, x + y ~ z, fun=list(sum, mean), value.var=list("d1", "d2"))
 ```
+`?dcast.data.table`
+
 
 ## melt.data.table
 ```
@@ -313,3 +313,4 @@ melt(DT, id=1:2, measure=patterns("f_", "d_"), value.factor=TRUE, na.rm=TRUE)
 melt(DT, id=1:2, measure=patterns("l_", "c_"), na.rm=TRUE)
 
 ```
+`?melt.data.table`
