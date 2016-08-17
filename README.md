@@ -1,4 +1,4 @@
-# data.table.examples
+# data.table: faster and friendlier
 
 | Functions  | 
 | ---- | 
