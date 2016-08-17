@@ -68,6 +68,15 @@ maf <- fread("example.maf", key = "Tumor_Sample_Barcode")
 
 ## `DT[where, select|update|do, by]`
 
+
+```
+    DT[ i,  j,  by ] # + extra arguments
+        |   |   |
+        |   |    -------> grouped by what?
+        |    -------> what to do?
+         ---> on which rows?
+```
+
 `j` must return a list
 
 ```
