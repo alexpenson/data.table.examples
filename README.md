@@ -66,7 +66,7 @@ Read 12348 rows. Exactly what was estimated and allocated up front
 maf <- fread("example.maf", key = "Tumor_Sample_Barcode")
 ```
 
-## `dt[i, j, by]`
+## `DT[where, select|update|do, by]`
 
 `j` must return a list
 
