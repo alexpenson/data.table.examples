@@ -4,7 +4,7 @@
 | ---- | 
 | fread / fwrite |  
 | dt[i, j, by] |  
-| merge / rbind | 
+| merge / rbindlist | 
 | inrange / foverlaps |  
 | dcast / melt |  
 
