@@ -1,12 +1,12 @@
 # data.table.examples
 
-| function | concise | fast |
-| ---- | --- | --- |
-| fread / fwrite |  |  |
-| dt[i, j, by] |  |  |
-| merge / rbind | | |
-| inrange / foverlaps |  |  |
-| dcast / melt |  |  |
+| function | 
+| ---- | 
+| fread / fwrite |  
+| dt[i, j, by] |  
+| merge / rbind | 
+| inrange / foverlaps |  
+| dcast / melt |  
 
 https://github.com/Rdatatable/data.table/wiki
 ```
