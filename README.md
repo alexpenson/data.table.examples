@@ -25,7 +25,26 @@ https://s3.amazonaws.com/assets.datacamp.com/img/blog/data+table+cheat+sheet.pdf
 
 http://www.r-bloggers.com/advanced-tips-and-tricks-with-data-table/
 
-## fread
+## fread - Fast and friendly
+`?fread`
+
+```
+system.time(DF1 <-read.csv("test.csv",stringsAsFactors=FALSE))
+# 60 sec (first time in fresh R session)
+
+system.time(DF1 <- read.csv("test.csv",stringsAsFactors=FALSE))
+# 30 sec (immediate repeat is faster, varies)
+
+system.time(DF2 <- read.table("test.csv",header=TRUE,sep=",",quote="",
+    stringsAsFactors=FALSE,comment.char="",nrows=n,
+    colClasses=c("integer","integer","numeric",
+                 "character","numeric","integer")))
+# 10 sec (consistently). All known tricks and known nrows, see references.
+
+require(data.table)
+system.time(DT <- fread("test.csv"))
+#  3 sec (faster and friendlier)
+```
 
 Reading a maf file
 ```
