@@ -219,7 +219,13 @@ Usually, x is a very large data.table with small interval ranges, and y is much 
 Very briefly, foverlaps() collapses the two-column interval in y to one-column of unique values to generate a lookup table, and then performs the join depending on the type of overlap, using the already available binary search feature of data.table.
 
 ```
-wg <- fread("curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability/wgEncodeDacMapabilityConsensusExcludable.bed.gz | gunzip --stdout", 
-            key = c("V1", "V2", "V3"))
+wg <- fread("curl http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeMapability/wgEncodeDacMapabilityConsensusExcludable.bed.gz | gunzip --stdout")
+setnames(wg, c("Chromosome", "Start_position", "End_position", "name", "A", "B"))
+wg[, Chromosome := gsub("^chr", "", Chromosome)]
+setkeyv(wg, c("Chromosome", "Start_position", "End_position"))
+
+maf_excludable <- foverlaps(maf, wg, nomatch = 0)
+nrow(maf_excludable)
+# 30
 ```
 https://github.com/hadley/dtplyr
