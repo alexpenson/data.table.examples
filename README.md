@@ -147,7 +147,8 @@ Take DT, subset rows by `i`, then compute `j` grouped by `by`
 ```
 maf[, as.list(summary(t_depth)), Tumor_Sample_Barcode]
 ```
-
+### Benchmarks
+![Benchmarks image](https://github.com/Rdatatable/data.table/wiki/bench/grouping.1E9.png)
 ### Internal Optimization - Auto-indexing and GForce
 `?datatable.optimize`
 ```
