@@ -63,6 +63,20 @@ require(data.table)
 system.time(DT <- fread("test.csv"))
 #  3 sec (faster and friendlier)
 ```
+## fwrite
+```
+system.time(fwrite(dt, "~/tmp.tsv", quote=FALSE, sep="\t"))
+#   user  system elapsed 
+#  2.643   0.291   1.710
+write.table(dt, "tmp2.tsv", 
+                quote = F,
+                col.names=T,
+                row.names=F,
+                sep='\t')
+#   user  system elapsed 
+# 72.020   1.363  78.741 
+
+```
 
 ### Reading a maf file
 ```
