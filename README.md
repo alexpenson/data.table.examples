@@ -78,7 +78,10 @@ write.table(dt, "tmp2.tsv",
 #   user  system elapsed 
 # 72.020   1.363  78.741 
 
-system.time(fwrite(dt, "~/tmp.tsv", quote=FALSE, sep="\t"))
+system.time(fwrite(dt, "~/tmp.tsv", quote=FALSE, sep="\t", verbose = TRUE))
+# Maximum line length is 212 calculated in 0.000s
+# Writing column names ... done in 0.000s
+# Writing data rows in 1011 batches of 4946 rows (each buffer size 1.000MB, turbo=1) ... all 4 threads done
 #   user  system elapsed 
 #  2.643   0.291   1.710
 ```
