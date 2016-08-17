@@ -254,3 +254,62 @@ maf_excludable <- foverlaps(maf, wg, nomatch = 0)    ### using TCGA prostate maf
 nrow(maf_excludable)
 # 30
 ```
+
+## dcast.data.table
+
+```
+set.seed(45)
+DT <- data.table(aa=sample(1e4, 1e6, TRUE), 
+      bb=sample(1e3, 1e6, TRUE), 
+      cc = sample(letters, 1e6, TRUE), dd=runif(1e6))
+system.time(dcast(DT, aa ~ cc, fun=sum)) # 0.12 seconds
+system.time(dcast(DT, bb ~ cc, fun=mean)) # 0.04 seconds
+# reshape2::dcast takes 31 seconds
+system.time(dcast(DT, aa + bb ~ cc, fun=sum)) # 1.2 seconds
+
+## End(Not run)
+
+# NEW FEATURE - multiple value.var and multiple fun.aggregate
+dt = data.table(x=sample(5,20,TRUE), y=sample(2,20,TRUE), 
+                z=sample(letters[1:2], 20,TRUE), d1 = runif(20), d2=1L)
+# multiple value.var
+dcast(dt, x + y ~ z, fun=sum, value.var=c("d1","d2"))
+# multiple fun.aggregate
+dcast(dt, x + y ~ z, fun=list(sum, mean), value.var="d1")
+# multiple fun.agg and value.var (all combinations)
+dcast(dt, x + y ~ z, fun=list(sum, mean), value.var=c("d1", "d2"))
+# multiple fun.agg and value.var (one-to-one)
+dcast(dt, x + y ~ z, fun=list(sum, mean), value.var=list("d1", "d2"))
+```
+
+## melt.data.table
+```
+set.seed(45)
+DT <- data.table(
+      i_1 = c(1:5, NA), 
+      i_2 = c(NA,6,7,8,9,10), 
+      f_1 = factor(sample(c(letters[1:3], NA), 6, TRUE)), 
+      f_2 = factor(c("z", "a", "x", "c", "x", "x"), ordered=TRUE), 
+      c_1 = sample(c(letters[1:3], NA), 6, TRUE), 
+      d_1 = as.Date(c(1:3,NA,4:5), origin="2013-09-01"), 
+      d_2 = as.Date(6:1, origin="2012-01-01"))
+# add a couple of list cols
+DT[, l_1 := DT[, list(c=list(rep(i_1, sample(5,1)))), by = i_1]$c]
+DT[, l_2 := DT[, list(c=list(rep(c_1, sample(5,1)))), by = i_1]$c]
+
+# measure.vars can be also a list
+# melt "f_1,f_2" and "d_1,d_2" simultaneously in a
+# convenient way using internal function patterns()
+# as well as retaining the 'factor' attribute
+melt(DT, id=1:2, measure=patterns("^f_", "^d_"), value.factor=TRUE)
+
+# same as above, but provide list of columns directly by column names or indices
+melt(DT, id=1:2, measure=list(3:4, c("d_1", "d_2")), value.factor=TRUE)
+
+# na.rm=TRUE removes rows with NAs in any 'value' columns
+melt(DT, id=1:2, measure=patterns("f_", "d_"), value.factor=TRUE, na.rm=TRUE)
+
+# return 'NA' for missing columns, 'na.rm=TRUE' ignored due to list column
+melt(DT, id=1:2, measure=patterns("l_", "c_"), na.rm=TRUE)
+
+```
