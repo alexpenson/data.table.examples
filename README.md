@@ -208,6 +208,11 @@ DT[, {tmp <- mean(y);
 ```
 `?data.table`
 
+### Passing `data.table` column names as function arguments
+
+http://brooksandrew.github.io/simpleblog/articles/advanced-data-table/#passing-datatable-column-names-as-function-arguments
+
+
 ### Benchmarks
 ![Benchmarks image](https://github.com/Rdatatable/data.table/wiki/bench/grouping.1E9.png)
 
