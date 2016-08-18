@@ -163,7 +163,7 @@ Read 12348 rows. Exactly what was estimated and allocated up front
 
 ## `DT[ i,  j,  by ]`
 
-Take DT, subset rows by `i`, then compute `j` grouped by `by`
+Take DT, subset rows by `i`, _then_ compute `j` grouped by `by`
 ```
     DT[ i,  j,  by ]
         |   |   |
