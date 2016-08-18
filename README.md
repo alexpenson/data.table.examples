@@ -179,8 +179,10 @@ maf[, as.list(summary(t_depth)), Tumor_Sample_Barcode]
 ```
 
 ```
-# advanced usage
 DT = data.table(x=rep(c("b","a","c"),each=3), v=c(1,1,1,2,2,1,1,2,2), y=c(1,3,6), a=1:9, b=9:1)
+
+DT[, m:=mean(v), by=x][]              # add new column by reference by group
+                                      # NB: postfix [] is shortcut to print()
 
 DT[, sum(v), by=.(y%%2)]              # expressions in by
 DT[, sum(v), by=.(bool = y%%2)]       # same, using a named list to change by column name
