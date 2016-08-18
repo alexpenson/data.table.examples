@@ -253,6 +253,7 @@ system.time(ans2 <- dt[id == 100L]) # only binary search subset
 #  0.003   0.000   0.003 
 ```
 `?datatable.optimize`
+
 **looping with `set`**
 ```
 M = matrix(1,nrow=100000,ncol=100)
