@@ -216,7 +216,8 @@ http://brooksandrew.github.io/simpleblog/articles/advanced-data-table/#passing-d
 ### Benchmarks
 ![Benchmarks image](https://github.com/Rdatatable/data.table/wiki/bench/grouping.1E9.png)
 
-### Internal Optimization - Auto-indexing and GForce
+### Optimization
+**GForce**
 ```
 set.seed(1L)
 dt = lapply(1:20, function(x) sample(c(-100:100), 5e6L, TRUE))
@@ -232,8 +233,9 @@ system.time(ans2 <- dt[, lapply(.SD, base::mean), by=id])
 #   user  system elapsed 
 # 38.041   0.253  41.950 
 identical(ans1, ans2)
-
-# auto indexing
+```
+**Auto-indexing**
+```
 options(datatable.auto.index = FALSE)
 system.time(ans1 <- dt[id == 100L]) # vector scan
 #   user  system elapsed 
@@ -251,8 +253,7 @@ system.time(ans2 <- dt[id == 100L]) # only binary search subset
 #  0.003   0.000   0.003 
 ```
 `?datatable.optimize`
-
-### looping with `set`
+**looping with `set`**
 ```
 M = matrix(1,nrow=100000,ncol=100)
 # DF = as.data.frame(M)
