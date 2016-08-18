@@ -172,8 +172,7 @@ Take DT, subset rows by `i`, then compute `j` grouped by `by`
          ---> on which rows?
 ```
 
-`j` must return a list
-
+To make a new data.table, `j` must return a list:
 ```
 maf[, as.list(summary(t_depth)), Tumor_Sample_Barcode]
 ```
