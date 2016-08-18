@@ -279,6 +279,22 @@ FULL OUTER | - | merge(X, Y, all=TRUE)
 FULL OUTER WHERE NULL (NOT INNER) | - | merge(X, Y, all=TRUE), subset NA
 https://github.com/ronasta/JOINing-Data-with-R-data.table
 
+## rbindlist
+
+```
+# fill missing columns, and match by col names
+DT1 = data.table(A=1:3,B=letters[1:3])
+DT2 = data.table(B=letters[4:5],C=factor(1:2))
+l = list(DT1,DT2)
+rbindlist(l, use.names=TRUE, fill=TRUE)
+
+# generate index column, auto generates indices
+rbindlist(l, use.names=TRUE, fill=TRUE, idcol=TRUE)
+# let's name the list
+setattr(l, 'names', c("a", "b"))
+rbindlist(l, use.names=TRUE, fill=TRUE, idcol="ID")
+```
+
 ## inrange / foverlaps
 
 ```
