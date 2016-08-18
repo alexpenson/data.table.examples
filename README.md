@@ -202,7 +202,7 @@ DT[, sum(v), by=x][order(-V1)]        # ordering results
 DT[, c(.N, lapply(.SD,sum)), by=x]    # get number of observations and sum per group
 DT[, {tmp <- mean(y); 
       .(a = a-tmp, b = b-tmp)
-      }, by=x]                        # anonymous lambdain 'j', j accepts any valid 
+      }, by=x]                        # anonymous lambda in 'j', j accepts any valid 
                                       # expression. TO REMEMBER: every element of 
                                       # the list becomes a column in result.
 ```
