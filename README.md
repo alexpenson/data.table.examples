@@ -213,7 +213,6 @@ DT[, {tmp <- mean(y);
 ![Benchmarks image](https://github.com/Rdatatable/data.table/wiki/bench/grouping.1E9.png)
 
 ### Internal Optimization - Auto-indexing and GForce
-`?datatable.optimize`
 ```
 set.seed(1L)
 dt = lapply(1:20, function(x) sample(c(-100:100), 5e6L, TRUE))
@@ -246,8 +245,8 @@ system.time(ans1 <- dt[id == 100L]) # index + binary search subset
 system.time(ans2 <- dt[id == 100L]) # only binary search subset
 #   user  system elapsed 
 #  0.003   0.000   0.003 
-
 ```
+`?datatable.optimize`
 
 ### looping with `set`
 ```
