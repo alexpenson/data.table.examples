@@ -172,7 +172,7 @@ Take DT, subset rows by `i`, _then_ compute `j` grouped by `by`
          ---> on which rows?
 ```
 
-To make a new data.table, `j` must return a list:
+To make a new data.table, `j` should return a data.table, data.frame or a list:
 ```
 maf[, as.list(summary(t_depth)), Tumor_Sample_Barcode]
 ```
